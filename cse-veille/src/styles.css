@@ -1,0 +1,102 @@
+/* ─────────────────────────────────────────────
+   CSE Veille — styles.css
+   Design system · tokens · composants globaux
+───────────────────────────────────────────── */
+
+:root {
+  --bg: #f5f2ed;
+  --surface: #fffefb;
+  --surface2: #f0ede6;
+  --border: #d9d4c7;
+  --border-strong: #b5ae9f;
+  --ink: #1a1814;
+  --ink-dim: #6b6355;
+  --ink-faint: #a09887;
+  --accent: #1a3a2e;
+  --accent-light: #e8f2ec;
+  --accent-warm: #8b3a1a;
+  --tag-text: #a8d4b8;
+  --pin-bg: #fffef5;
+  --pin-border: #e8d9a0;
+  --pin-shadow: rgba(180,160,80,0.15);
+  --help-bg: #f5efe8;
+  --help-border: #d4b896;
+  --r: 6px;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --font-serif: 'Instrument Serif', serif;
+  --font-sans: 'Syne', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-mono);
+}
+
+/* ── TOPBAR ── */
+.topbar {
+  height: 46px;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+  gap: 1.25rem;
+  border-bottom: 2px solid #0d2018;
+  flex-shrink: 0;
+}
+.tb-logo {
+  font-family: var(--font-sans);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #a8d4b8;
+  white-space: nowrap;
+}
+.tb-sep { width: 1px; height: 18px; background: #2d5a42; flex-shrink: 0; }
+.tb-crumb { font-size: .6rem; color: #6b9e7e; letter-spacing: .05em; }
+.tb-crumb span { color: #a8d4b8; }
+.tb-right { margin-left: auto; display: flex; align-items: center; gap: .75rem; }
+
+.nav-pill {
+  font-size: .58rem;
+  padding: .18rem .55rem;
+  border-radius: 100px;
+  border: 1px solid #2d5a42;
+  color: #6b9e7e;
+  letter-spacing: .05em;
+  cursor: pointer;
+  background: none;
+  font-family: var(--font-mono);
+  transition: all .15s;
+}
+.nav-pill:hover, .nav-pill.active {
+  border-color: #a8d4b8;
+  color: #a8d4b8;
+  background: rgba(168,212,184,.08);
+}
+
+/* ── FADE IN ── */
+.fade-in { animation: fadeIn .35s ease; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ── UTILS ── */
+.screen-root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+.screen-body {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
